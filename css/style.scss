@@ -37,13 +37,6 @@
     --z-fixed: 100;
 }
 
-@media screen and (min-width: 968px) {
-    :root {
-        --biggest-font-size: 3rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-    }
-}
 
 /*========== BASE ==========*/
 
@@ -59,14 +52,14 @@ body {
 
 .upper {
     width: 100vw;
-    font-family: monospace;
- 
+    // font-family: monospace;
+    
     .upper_nav {
         margin-right:491px;
         padding: 0;
         display: flex;
         flex-direction: row-reverse;
-
+        color: black;
         li {
             margin: 0 7px;
         }
@@ -183,40 +176,15 @@ a {
     top: calc(var(--header-height) + 1rem);
 }
 
-
-
-@media screen and (min-width: 780px) {
-    body {
-        margin: 0;
-    }
-
-
-    .nav {
-        height: calc(var(--header-height) + 1.5rem);
-    }
-
-    .nav__list {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav__item {
-        margin-left: var(--mb-2);
-        margin-bottom: 0;
-    }
-
-    .nav__toggle {
-        display: none;
-    }
-    
+.un {
+    display: inline-block;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-@media screen and (min-width: 968px) {
-    .bd-container {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
+.un-li {
+    display:none;
 }
 
 
@@ -225,7 +193,7 @@ a {
 
 /* Slideshow container */
 .slideshow-container {
-    // max-width: 1000px;
+    // max-width: 1000px;   
     // position: relative;
     // margin: auto;
     width: 100%;
@@ -305,7 +273,8 @@ a {
     height: 15px;
     width: 15px;
     margin: 0 0px;
-    background-color: #bbb;
+    background-color: transparent;
+    border: 2px solid rgb(120, 150, 216);
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
@@ -320,7 +289,7 @@ a {
 }
 .active,
 .dot:hover {
-    background-color: #717171;
+    background-color: rgb(120, 150, 216);
 }
 
 /* Fading animation */
@@ -339,19 +308,9 @@ a {
     }
 }
 
-// @media screen and (max-width: 779px) {
-//     .slideshow-container {
-//         img {
-//             width: 100%;
-//         }
-//     }
-    
-// }
 // info 
 .container {
-    // background-color: red;
     display: flex;
-    // place-content: space-between;
     justify-content: center;
 }
 
@@ -398,28 +357,6 @@ span {
     }
 }
 
-@media only screen and (max-width: 823px) {
-    .info {
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-
-            .column {
-                margin-top: 10px;
-                width: 100%;
-                overflow: auto;
-
-                p {
-                    margin-bottom: 10px;
-                }
-            }
-        }
-    }
-}
-
 // footer
 .footer {
     .container {
@@ -446,6 +383,81 @@ span {
     }
 }
 
+// media query's 
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 955px) {
+    .un {
+        display:none;
+    }
+    .un-li {
+        display: inline-block;
+    }
+    
+}
+@media screen and (min-width: 780px) {
+    body {
+        margin: 0;
+    }
+
+
+    .nav {
+        height: calc(var(--header-height) + 1.5rem);
+    }
+
+    .nav__list {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__item {
+        margin-left: var(--mb-2);
+        margin-bottom: 0;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 968px) {
+    .bd-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (max-width: 823px) {
+    .info {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            .column {
+                margin-top: 10px;
+                width: 100%;
+                overflow: auto;
+
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
 @media only screen and (max-width: 768px) {
     .footer {
         .container {

@@ -1,29 +1,27 @@
 // slide show js
-let slideIndex = 1;
+let slideIndex = 0;
 showSlides(slideIndex);
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
 
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
-
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+   }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
 
@@ -47,9 +45,6 @@ showMenu('nav-toggle', 'nav-menu')
 /*REMOVE MENU MOBILE */
 const navLink = document.querySelectorAll('.nav__link')
 
-const up_nav = document.getElementById('nv');
-const up_list = ul.getElementsByTagName('li');
-console.log("hello ="+up_list.length);
 
 
 
@@ -62,15 +57,6 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 
-// slider
-var counter = 1;
-setInterval(function () {
-    document.getElementById('radio' + counter).checked = true;
-    counter++;
-    if (counter > 4) {
-        counter = 1;
-    }
-}, 5000);
 
 
 
